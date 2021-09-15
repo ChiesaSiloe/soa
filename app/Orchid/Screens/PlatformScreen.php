@@ -15,14 +15,14 @@ class PlatformScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Get Started';
+    public $name = 'SOA';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Welcome to your Orchid application.';
+    public $description = 'Un portale per il servizio d\'ordine.';
 
     /**
      * Query data.
@@ -64,7 +64,7 @@ class PlatformScreen extends Screen
     public function layout(): array
     {
         return [
-            Layout::view('platform::partials.welcome'),
+            //Layout::view('platform::partials.welcome'),
         ];
     }
 }

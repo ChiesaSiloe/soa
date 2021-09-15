@@ -26,6 +26,7 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
+            /**
             Menu::make('Example screen')
                 ->icon('monitor')
                 ->route('platform.example')
@@ -80,6 +81,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return Dashboard::version();
                 }, Color::DARK()),
+            */
 
             Menu::make(__('Users'))
                 ->icon('user')
