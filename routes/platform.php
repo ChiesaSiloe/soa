@@ -108,3 +108,7 @@ Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.exampl
 Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
 
 //Route::screen('idea', 'Idea::class','platform.screens.idea');
+
+use App\Orchid\Screens\SundayAddMember;
+Route::screen('add', SundayAddMember::class)
+    ->name('platform.sunday.add');

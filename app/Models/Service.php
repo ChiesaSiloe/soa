@@ -34,6 +34,10 @@ class Service extends Model
         'attended_on'    => 'datetime',
     ];
 
+    protected $allowedSorts = [
+        'attended_on',
+    ];
+
     protected $allowedFilters = [
         'attended_on',
     ];

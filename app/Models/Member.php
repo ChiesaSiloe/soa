@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 use Orchid\Attachment\Attachable;
 use Orchid\Filters\Filterable;
@@ -50,6 +51,16 @@ class Member extends Model
     public function getDisplayNameAttribute()
     {
         return "{$this->name} {$this->surname}";;
+    }
+
+    /**
+     * @param Builder $query
+     *
+     * @return Builder
+     */
+    public function scopeNotAttendedToday(Builder $query)
+    {
+        return $query->services()->where('attended_on', now()->toDateString());
     }
 
     /**

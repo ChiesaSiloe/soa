@@ -7,6 +7,9 @@ namespace App\Orchid\Screens;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
+use App\Orchid\Layouts\SundayListTable;
+
+use App\Models\Service;
 
 class PlatformScreen extends Screen
 {
@@ -31,7 +34,9 @@ class PlatformScreen extends Screen
      */
     public function query(): array
     {
-        return [];
+        return [
+            'services' => Service::with('member')->where('attended_on', now()->toDateString())->paginate()
+        ];
     }
 
     /**
@@ -42,29 +47,19 @@ class PlatformScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make('Website')
-                ->href('http://orchid.software')
-                ->icon('globe-alt'),
-
-            Link::make('Documentation')
-                ->href('https://orchid.software/en/docs')
-                ->icon('docs'),
-
-            Link::make('GitHub')
-                ->href('https://github.com/orchidsoftware/platform')
-                ->icon('social-github'),
+            Link::make('Aggiungi membro')->icon('pencil')->href('/admin/add'),
         ];
     }
 
     /**
      * Views.
      *
-     * @return \Orchid\Screen\Layout[]
+     * @return \Orchid\Screen\Layout[]|string[]
      */
     public function layout(): array
     {
         return [
-            //Layout::view('platform::partials.welcome'),
+            SundayListTable::class
         ];
     }
 }

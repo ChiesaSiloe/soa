@@ -13,7 +13,7 @@ use App\Orchid\Filters\QueryByTodayFilter;
 use App\Models\Service;
 use App\Models\Member;
 
-class ServiceResource extends Resource
+class AttendanceResource extends Resource
 {
     /**
      * The model the resource corresponds to.
@@ -58,6 +58,8 @@ class ServiceResource extends Resource
                 }),
 
             TD::make('attended_on', 'Ha frequentato il')
+                ->filter(TD::FILTER_DATE)
+                ->sort('desc')
                 ->render(function ($model) {
                     return $model->attended_on->toDateString();
                 }),
