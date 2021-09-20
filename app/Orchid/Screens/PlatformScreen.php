@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace App\Orchid\Screens;
 
 use Orchid\Screen\Actions\Link;
+use Orchid\Screen\Sight;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 use App\Orchid\Layouts\SundayListTable;
 
 use App\Models\Service;
+use Orchid\Screen\Repository;
 
 class PlatformScreen extends Screen
 {
@@ -47,7 +49,8 @@ class PlatformScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make('Aggiungi membro')->icon('pencil')->href('/admin/add'),
+            Link::make('Segna frequenza')->icon('pencil')->href('/admin/add'),
+            Link::make('Registra Membro')->icon('plus')->href('/admin/crud/create/member-resources')
         ];
     }
 

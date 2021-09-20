@@ -54,16 +54,6 @@ class Member extends Model
     }
 
     /**
-     * @param Builder $query
-     *
-     * @return Builder
-     */
-    public function scopeNotAttendedToday(Builder $query)
-    {
-        return $query->services()->where('attended_on', now()->toDateString());
-    }
-
-    /**
      * Get the services for the member.
      */
     public function services()
