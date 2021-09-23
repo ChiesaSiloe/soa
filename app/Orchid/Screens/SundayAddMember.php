@@ -89,7 +89,8 @@ class SundayAddMember extends Screen
 
         $service = Service::where('member_id', $request->member_id)
             ->where('attended_on', '>=', now()->toDateString())
-            ->first();
+            ->get()
+            ->last();
 
         if($service) {
             Toast::warning('Membro gia aggiunto');
