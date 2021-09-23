@@ -37,7 +37,7 @@ class PlatformScreen extends Screen
     public function query(): array
     {
         return [
-            'services' => Service::with('member')->where('attended_on', now()->toDateString())->paginate()
+            'services' => Service::with('member')->where('attended_on', '>=', now()->toDateString())->paginate()
         ];
     }
 
