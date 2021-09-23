@@ -45,23 +45,18 @@ class MemberResource extends Resource
                 ->placeholder('Inserisci il recapito telefonico qui.'),
             DateTimer::make('birth_date')
                 ->title('Data di nascita')
-                ->required()
                 ->placeholder('Inserisci la data di nascita qui.'),
             Input::make('birth_place')
                 ->title('Luogo di nascita')
-                ->required()
                 ->placeholder('Inserisci il luogo di nascita qui.'),
             Input::make('city')
                 ->title('Residenza')
-                ->required()
                 ->placeholder('Inserisci il comune di residenza qui.'),
             Input::make('address')
                 ->title('Indirizzo')
-                ->required()
                 ->placeholder('Inserisci l\'indirizzo qui.'),
             Input::make('civic_number')
                 ->title('Numero civico')
-                ->required()
                 ->placeholder('Inserisci il numero civico qui.'),
         ];
     }

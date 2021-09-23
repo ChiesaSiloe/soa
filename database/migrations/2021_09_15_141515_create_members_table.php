@@ -19,11 +19,11 @@ class CreateMembersTable extends Migration
             $table->string('surname');
             $table->string('fiscal_code');
             $table->string('phone_number');
-            $table->date('birth_date');
-            $table->string('birth_place');
-            $table->string('city');
-            $table->string('address');
-            $table->string('civic_number');
+            $table->date('birth_date'); // nullable
+            $table->string('birth_place'); // nullable
+            $table->string('city'); // nullable
+            $table->string('address'); // nullable
+            $table->string('civic_number'); // nullable
             $table->timestamps();
         });
     }
