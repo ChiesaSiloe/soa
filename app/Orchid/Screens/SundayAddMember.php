@@ -88,8 +88,7 @@ class SundayAddMember extends Screen
         ]);*/
 
         $service = Service::where('member_id', $request->member_id)
-            ->where('attended_on', now()
-            ->toDateString())
+            ->where('attended_on', '>=', now()->toDateString())
             ->first();
 
         if($service) {
@@ -101,7 +100,7 @@ class SundayAddMember extends Screen
 
         
         Service::create([
-            'attended_on' => now()->toDateString(), 
+            'attended_on' => now()->toDatetimeString(), 
             'member_id' => $request->member_id
         ]);
 
