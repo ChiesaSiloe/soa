@@ -100,7 +100,7 @@ class MemberResource extends Resource
             Sight::make('phone_number'),
             Sight::make('birth_date')
                 ->render(function ($model) {
-                    return $model->birth_date->toDateString();
+                    return $model->birth_date ? $model->birth_date->toDateString(): '';
                 }),
             Sight::make('birth_place'),
             Sight::make('city'),
