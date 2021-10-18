@@ -37,7 +37,6 @@ class MemberResource extends Resource
                 ->placeholder('Inserisci il cognome qui.'),
             Input::make('fiscal_code')
                 ->title('Codice Fiscale')
-                ->required()
                 ->placeholder('Inserisci il codice fiscale qui.'),
             Input::make('phone_number')
                 ->title('Recapito Telefonico')
